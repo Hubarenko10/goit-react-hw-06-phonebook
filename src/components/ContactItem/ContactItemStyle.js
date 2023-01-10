@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const ContactItemStyle = styled.div`
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 `;
 export const Btn = styled.button`
   align-items: center;
@@ -52,10 +52,10 @@ export const Btn = styled.button`
 `;
 
 export const Text = styled.p`
-font-family: 'JetBrains Mono', monospace;
-`
+  font-family: 'JetBrains Mono', monospace;
+`;
 export const Number = styled.span`
-font-family: 'JetBrains Mono', monospace;
-font-size: 15px;
-margin-right: 20px;
-`
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  margin-right: 20px;
+`;

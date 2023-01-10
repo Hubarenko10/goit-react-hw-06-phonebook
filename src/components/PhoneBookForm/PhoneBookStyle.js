@@ -1,21 +1,20 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Title = styled.h2`
-font-weight: 400;
-font-size: 23px;
-font-family: 'JetBrains Mono', monospace;
-margin: 0;
-margin-bottom: 5px;
-`
+  font-weight: 400;
+  font-size: 23px;
+  font-family: 'JetBrains Mono', monospace;
+  margin: 0;
+  margin-bottom: 5px;
+`;
 export const Form = styled.form`
-display: block;
-width:450px;
-height:150px;
-margin-bottom: 90px;
-`
+  display: block;
+  width: 450px;
+  height: 150px;
+  margin-bottom: 90px;
+`;
 export const Btn = styled.button`
-
-align-items: center;
+  align-items: center;
   appearance: none;
   background-color: #fcfcfd;
   border-radius: 4px;
@@ -59,28 +58,25 @@ align-items: center;
     box-shadow: #d6d6e7 0 3px 7px inset;
     transform: translateY(2px);
   }
-`
+`;
 export const Input = styled.input`
-display: flex;
-cursor:pointer;
-width: 370px;
-height: 25px;
-margin: 0;
-margin-bottom: 20px;
-&:not(:last-child){
-   
-}
+  display: flex;
+  cursor: pointer;
+  width: 370px;
+  height: 25px;
+  margin: 0;
+  margin-bottom: 20px;
+  &:not(:last-child) {
+  }
 
-&:focus
-{
-border-color: red;
-box-shadow: 0 0 10px #913945;
-outline: none;
-}
-`
+  &:focus {
+    border-color: red;
+    box-shadow: 0 0 10px #913945;
+    outline: none;
+  }
+`;
 export const Label = styled.label`
-display:block;
-justify-content: center;
-align-items: center;
-
-`
+  display: block;
+  justify-content: center;
+  align-items: center;
+`;

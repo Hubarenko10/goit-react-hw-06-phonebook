@@ -1,18 +1,15 @@
 import PropTypes from 'prop-types';
-import { SectionStyle, Title } from "./SectionStyle"
+import { SectionStyle, Title } from './SectionStyle';
 
-
-
-export const Section = ({title,children}) => {
-return(
-<SectionStyle>
-{title && <Title>{title}</Title>}
-{children}
-</SectionStyle>)
-
-}
+export const Section = ({ title, children }) => {
+  return (
+    <SectionStyle>
+      {title && <Title>{title}</Title>}
+      {children}
+    </SectionStyle>
+  );
+};
 
 Section.propTypes = {
-title: PropTypes.string,
-}
-
+  title: PropTypes.string,
+};

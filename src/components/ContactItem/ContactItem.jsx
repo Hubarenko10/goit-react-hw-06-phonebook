@@ -1,8 +1,16 @@
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { AiOutlineUser } from 'react-icons/ai';
 import { ContactItemStyle, Btn, Text, Number } from './ContactItemStyle';
+import { useDispatch } from 'react-redux';
+import { deleteContacts } from 'redux/contactsSlice';
 
-export const ContactItem = ({ id, name, number, onDelete }) => {
+export const ContactItem = ({ id, name, number,  }) => {
+  const dispatch = useDispatch();
+
+  const deleteContact = contactId => {
+  dispatch(deleteContacts(contactId));
+  }
+
   return (
     <ContactItemStyle>
       <Text>
@@ -11,7 +19,7 @@ export const ContactItem = ({ id, name, number, onDelete }) => {
       <Btn
         type="button"
         onClick={() => {
-          onDelete(id);
+          deleteContact(id);
         }}
       >
         Delete
@@ -20,9 +28,9 @@ export const ContactItem = ({ id, name, number, onDelete }) => {
   );
 };
 
-ContactItem.propTypes = {
-  name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
-  id: PropTypes.string.isRequired,
-  onDelete: PropTypes.func.isRequired,
-};
+// ContactItem.propTypes = {
+//   name: PropTypes.string.isRequired,
+//   number: PropTypes.string.isRequired,
+//   id: PropTypes.string.isRequired,
+// 
+// };

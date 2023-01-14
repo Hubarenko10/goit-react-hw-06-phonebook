@@ -1,10 +1,17 @@
-import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { Form, Btn, Input, Label, Title } from './PhoneBookStyle';
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { addContacts } from 'redux/contactsSlice';
+import { getContacts } from 'redux/selectors';
+import { nanoid } from 'nanoid';
 
-export const PhoneBook = ({ onSubmit }) => {
-  const [name, setName] = useState('');
-  const [number, setNumber] = useState('');
+export const PhoneBook = () => {
+  const [name,setName] = useState('')
+  const [number,setNumber] = useState('')
+
+  const dispatch = useDispatch();
+  const contacts = useSelector(getContacts);
 
   const handleChange = event => {
     const { name, value } = event.target;
@@ -19,7 +26,18 @@ export const PhoneBook = ({ onSubmit }) => {
   };
   const handleSubmit = event => {
     event.preventDefault();
-    onSubmit({ name, number });
+    if(contacts.find(contact => contact.name === name)){
+    return alert(name + '  - duplicate contact')
+    }
+    else {
+    dispatch(
+      addContacts({
+        id: nanoid(),
+        name,
+        number,
+      })
+      )
+    }
     reset();
   };
   const reset = () => {
@@ -55,8 +73,4 @@ export const PhoneBook = ({ onSubmit }) => {
       </Form>
     </>
   );
-};
-
-Form.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
 };

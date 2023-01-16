@@ -7,25 +7,19 @@ export const ContactList = () => {
   const contacts = useSelector(getContacts);
   const filter = useSelector(getFilter);
 
-  const getFilteredContacts = () =>{
+  const getFilteredContacts = () => {
     const normalizedFilter = filter.toLowerCase();
-    return(contacts.filter(({ name }) =>
-    name.toLowerCase().includes(normalizedFilter)
-  )) 
-  
-  }
+    return contacts.filter(({ name }) =>
+      name.toLowerCase().includes(normalizedFilter)
+    );
+  };
 
   return (
     <ItemList>
-      {getFilteredContacts().map(({ name, number, id }) => {
+       {getFilteredContacts().map(({ id, name, number }) => {
         return (
           <Item key={id}>
-            <ContactItem
-              name={name}
-              number={number}
-              id={id}
-              
-            />
+            <ContactItem name={name} id={id} number={number} />
           </Item>
         );
       })}
